@@ -1,0 +1,47 @@
+persistencia de datos
+	+ nesesito acceso a los RECTANGULOS para poder repintarlos a su color defaul (TABLERO)
+		o del color Verde ( que indica al usuario los movimientos permitidos cuando elije una pieza )
+		
+		Map <Coordenada, rectangulos > rectangulos
+	
+	+ nesesito acceso a las IMAGENES para poder eliminarla del Gridpane mediante la clase heredada 'node'
+		el metodo de 'node' (remove) me pide la ImagenView es la unica alternativa q me permite
+		   (eliminar la pieza pintada en el tablero cuando el usuario come una pieza )
+		   
+		Map <Coordenada, ImageView> imagenes
+    
+    + nesesito acceso a las PIEZAS para poder armar los movimientos validos cuando el usuario hace click
+    	sobre una pieza
+    	
+    	Map <Coordenada, Pieza> piezas 
+    
+    + nesesito acceso a los SPRITES para poder crear las ImageView cuando se crean las piezas para mostrar
+    	en el tablero 
+    	
+    	Map <String, Image> sprite
+ 
+ 
+ Issues.
+  	El GridPane no captura el click cuando se le asigna un hijo a este 
+  	
+  	problema : Cada hijo del grid pane tiene un Rectangulo, ImagenView . cuando haces click este no captura el evento;
+  	
+  	Solucion: En stackoverflood se mensiono problema con lo cual se propuso poner un (PANE) el top del stack de la celda y este
+  	
+  	capture el evento click. Esa idea la transpole en el TP
+  	
+ (Issue cerrado) 
+ 
+ Issues
+ 	El GridPane sigue mostrando la pieza comida y no pone la pieza actual
+ 	
+ 	problema. Ejemplo cuando un peon come blanco -> negro.. tendria q solo mostrar el blanco y esto no sucede
+ 			 la referencia del ImageView tendria q alcanzar y no lo hace.
+ 	
+ 	solucion: se opto por borrar el nodo hijo de Gridpane en vez de pisar la referencia . con esto se soluciono el problema
+ 				de mostrar la pieza que come a la otra pieza
+ (issue cerrado )
+   	
+
+  
+  
